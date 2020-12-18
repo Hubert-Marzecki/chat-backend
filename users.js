@@ -6,7 +6,7 @@ const addUser = ( {id,nick,room} ) => {
     nick = nick.trim().toLowerCase();
     room = room.trim().toLowerCase();
 
-    const existingUser = users.find(user => user.room === room && user.name === name);
+    const existingUser = users.find(user => user.room === room && user.nick === nick);
     if(existingUser) {
         return {
             error: 'Username is taken'
@@ -30,7 +30,7 @@ if(index !== -1) {
 }
 
 const getUser = (id) => {
-    users.find((user) => user.id === id)
+   return users.find((user) => user.id === id)
 }
 
 const getUsersInRoom = (room) => {

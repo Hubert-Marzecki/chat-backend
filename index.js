@@ -35,7 +35,7 @@ io.on('connection', (socket) => {
         const user = getUser(socket.id);
 
         // send message in specific room
-        io.to(user.room).emit('message', {user: use.nick, text:message});
+        io.to(user.room).emit('message', {user: user.nick, text:message});
         callback();
     })
 
